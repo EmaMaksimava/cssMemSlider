@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Yanone Kaffeesatz', sans-serif;
+  background-color: rgb(31, 31, 31);
 }
 
 .container {
@@ -34,7 +35,7 @@
 
 .main-content {
   display: grid;
-  width: 1200px;
+  width: 94%;
   grid-template-columns: 4fr 1fr;
   grid-template-rows: 7fr 1fr;
   row-gap: 40px;
@@ -71,7 +72,6 @@
 .slider-controls {
   grid-column: 2/3;
   grid-row: 2/3;
-  /*grid-area: controls;*/
   justify-self: right;
   display: flex;
   justify-content: center;
@@ -111,7 +111,6 @@
   overflow: hidden;
   grid-column: 1/2;
   grid-row: 2/3;
-  /*grid-area: description;*/
   justify-self: left;
   color: orange;
   font-size: 2em;
@@ -160,4 +159,52 @@
   color: #FFF;
   letter-spacing: 1px;
   font-weight: 300;
+}
+
+@media screen and (max-width: 995px) {
+  .main-header {
+    font-size: 2.0rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 5px;
+  }
+
+  .subheader {
+    font-size: 1.3rem;
+  }
+
+  .main-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60% 8% 7%;
+    row-gap: 20px;
+  }
+
+  .slider-wrapper {
+    grid-column: none;
+    height: auto;
+  }
+
+  .slider-controls {
+    grid-column: none;
+    grid-row: 2/3;
+    justify-self: center;
+  }
+
+  .slider-descr {
+    width: 100%;
+    overflow: hidden;
+    grid-column: none;
+    grid-row: 3/4;
+    justify-self: center;
+  }
+}
+
+@media screen and (max-width: 789px) {
+  .main-content {
+    grid-template-rows: 60% 8% 13%;
+  }
+
+  .slider-descr {
+    font-size: 1.0rem;
+  }
 }

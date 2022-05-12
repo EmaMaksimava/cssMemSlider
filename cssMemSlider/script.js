@@ -11,7 +11,6 @@ window.addEventListener('DOMContentLoaded', () => {
         widthDescr = window.getComputedStyle(sliderDescr).width;
 
    let offset = 0;
-   let offsetDescr = 0;
 
 
    sliderField.style.width = 100 * slides.length + "%";
@@ -43,17 +42,12 @@ window.addEventListener('DOMContentLoaded', () => {
          }
        });
 
-       /*offsetDescr = +widthDescr.slice(0, widthDescr.length -2) * (slideTo -1);
-       console.log(offsetDescr);
-       sliderDescr.style.transform = `translateX(-${offsetDescr})px`;*/
        descriptions[slideTo - 1].classList.remove('hidden');
        descriptions.forEach((phrase, index) => {
          if(index !== slideTo - 1) {
            phrase.classList.add('hidden');
          }
        })
-
-
 
      })
     })
