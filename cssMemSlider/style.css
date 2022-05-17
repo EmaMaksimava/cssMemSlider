@@ -41,6 +41,143 @@
   row-gap: 40px;
 }
 
+.wrapper {
+  height: 85vh;
+  margin: 20px auto;
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-template-rows: 7fr 1fr;
+  row-gap: 40px;
+}
+
+.slider {
+  grid-column: 1/3;
+  grid-row: 1/2;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  width: inherit;
+  border-radius: 8px;
+  box-shadow: 2px 2px 15px rgba(255, 255, 255, 0.502);
+}
+
+.slides {
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  border-radius: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  transform: scale(1.3);
+  transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+}
+
+.slide1 {
+  background-image: url(https://i.pinimg.com/originals/60/59/e4/6059e46678feb776c161f0f390c23d37.jpg);
+}
+.slide2 {
+  background-image: url(https://csn.naekranie.pl/social-media/news/8868dda3-18d4-4327-b68a-4c2adb38b10b);
+}
+.slide3 {
+  background-image: url(https://i.pinimg.com/originals/12/6b/a4/126ba44ec92c92fb54d2e61343973c12.jpg);
+}
+.slide4 {
+  background-image: url(https://ykloh2l68ra38u6ir1pvy71k-wpengine.netdna-ssl.com/wp-content/uploads/2021/06/BB2012_062021_1920x1080.jpg);
+}
+.slide5 {
+  background-image: url(https://wallpapercave.com/uwp/uwp1995136.jpeg);
+}
+
+#slide1:checked ~ .slider > .slide1,
+#slide2:checked ~ .slider > .slide2,
+#slide3:checked ~ .slider > .slide3,
+#slide4:checked ~ .slider > .slide4,
+#slide5:checked ~ .slider > .slide5 {
+  opacity: 1;
+  z-index: 1;
+  transform: scale(1);
+}
+
+.wrapper > input {
+  display: none;
+}
+
+.slide-controls {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  justify-self: right;
+}
+
+.wrapper label {
+  cursor: pointer;
+  display: inline-block;
+  height: 12px;
+  margin: 25px 12px 0 16px;
+  position: relative;
+  width: 12px;
+  border-radius: 50%;
+}
+
+.wrapper label:hover {
+  background-color: #fee13cde;
+}
+
+.wrapper label:active,
+#slide1:checked ~ .slide-controls label:nth-of-type(1),
+#slide2:checked ~ .slide-controls label:nth-of-type(2),
+#slide3:checked ~ .slide-controls label:nth-of-type(3),
+#slide4:checked ~ .slide-controls label:nth-of-type(4),
+#slide5:checked ~ .slide-controls label:nth-of-type(5) {
+  background-color: #ffa500;
+}
+
+.wrapper label:after {
+  border: 2px solid #FFF;
+  content: " ";
+  display: block;
+  height: 16px;
+  left: -4px;
+  position: absolute;
+  top: -4px;
+  width: 16px;
+  border-radius: 50%;
+}
+
+.description {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  justify-self: left;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  width: 75%;
+}
+
+.descr-text{
+  padding-top: 20px;
+  padding-left: 8px;
+  color: #ffa500;
+  font-size: 2em;
+  font-weight: 300;
+  letter-spacing: 2px;
+  display: none;
+  transform: scale(1.3);
+  transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+}
+
+#slide1:checked ~ .description > .text1,
+#slide2:checked ~ .description > .text2,
+#slide3:checked ~ .description > .text3,
+#slide4:checked ~ .description > .text4,
+#slide5:checked ~ .description > .text5 {
+  display: block;
+  transform: scale(1);
+}
+
 .slider-wrapper {
   grid-column: 1/3;
   grid-row: 1/2;
@@ -177,6 +314,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: 60% 8% 7%;
     row-gap: 20px;
+    position: relative;
   }
 
   .slider-wrapper {
