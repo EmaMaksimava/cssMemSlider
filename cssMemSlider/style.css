@@ -109,28 +109,35 @@
   align-items: center;
 }
 
-.wrapper label {
+.label {
   cursor: pointer;
   display: inline-block;
-  height: 1.5rem;
+  height: 2.1rem;
   margin: 0.8rem;
   position: relative;
+  width: 1.9rem;
+}
+
+.dot {
+  text-align: center;
+  height: 1.5rem;
   width: 1.5rem;
   border-radius: 50%;
   border: 2px solid #ffffff;
 }
 
-.wrapper label:hover {
+.label:hover .dot,
+.dot:hover {
   border: 2px solid #ffa500;
   background-color: #fee13cde;
 }
 
-.wrapper label:active,
-#slide1:checked ~ .slide-controls label:nth-of-type(1),
-#slide2:checked ~ .slide-controls label:nth-of-type(2),
-#slide3:checked ~ .slide-controls label:nth-of-type(3),
-#slide4:checked ~ .slide-controls label:nth-of-type(4),
-#slide5:checked ~ .slide-controls label:nth-of-type(5) {
+.dot:active,
+#slide1:checked ~ .slide-controls .label:nth-of-type(1) .dot,
+#slide2:checked ~ .slide-controls .label:nth-of-type(2) .dot,
+#slide3:checked ~ .slide-controls .label:nth-of-type(3) .dot,
+#slide4:checked ~ .slide-controls .label:nth-of-type(4) .dot,
+#slide5:checked ~ .slide-controls .label:nth-of-type(5) .dot{
   background-color: #ffa500;
 }
 
@@ -142,6 +149,7 @@
   overflow: hidden;
   position: relative;
   width: 75%;
+
 }
 
 .descr-text{
@@ -153,7 +161,8 @@
   letter-spacing: 0.02em;
   display: none;
   transform: scale(1.3);
-  transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+  opacity: 0;
+  transition: transform ease-in-out .5s, opacity ease-in-out .2s;
 }
 
 #slide1:checked ~ .description > .text1,
@@ -162,6 +171,7 @@
 #slide4:checked ~ .description > .text4,
 #slide5:checked ~ .description > .text5 {
   display: block;
+  opacity: 1;
   transform: scale(1);
 }
 
