@@ -19,7 +19,7 @@
 .header {
   text-align: center;
   color: #f9d11b;
-  text-shadow: 2px 2px 2px rgba(82, 79, 79, 0.922);
+  text-shadow: 0.125rem 0.125rem 0.125rem rgba(82, 79, 79, 0.922);
 }
 
 .main-header {
@@ -123,12 +123,12 @@
   height: 1.5rem;
   width: 1.5rem;
   border-radius: 50%;
-  border: 2px solid #ffffff;
+  border: 0.125rem solid #ffffff;
 }
 
 .label:hover .dot,
 .dot:hover {
-  border: 2px solid #ffa500;
+  border: 0.125rem solid #ffa500;
   background-color: #fee13cde;
 }
 
@@ -219,7 +219,7 @@
   .main-header {
     font-size: 2.0rem;
     letter-spacing: 0.1em;
-    margin-bottom: 5px;
+    margin-bottom: 0.3rem;
   }
 
   .subheader {
